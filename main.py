@@ -6,7 +6,6 @@ from menu import menu
 import blessed
 
 term = blessed.Terminal()
-term.fullscreen()
 
 if __name__ == '__main__':
   with term.fullscreen():
@@ -23,7 +22,10 @@ if __name__ == '__main__':
     xmpp = Session(args.jid, args.password, 'amiguito')
     xmpp.register_plugin('xep_0030') # Service Discovery
     xmpp.register_plugin('xep_0004') # Data forms
+    xmpp.register_plugin('xep_0060') # PubSub
+    xmpp.register_plugin('xep_0047') # In-band Bytestreams
     xmpp.register_plugin('xep_0066') # Out-of-band Data
+    xmpp.register_plugin('xep_0199') # Ping
     xmpp.register_plugin('xep_0065', {
       'auto_accept': True
     }) # SOCKS5 Bytestreams
@@ -31,7 +33,7 @@ if __name__ == '__main__':
     xmpp['xep_0077'].force_registration = True
 
     # Setup logging.
-    logging.basicConfig(level=logging.ERROR, format='%(levelname)-8s %(message)s')
+    logging.basicConfig(level=logging.DEBUG, format='%(levelname)-8s %(message)s')
 
     xmpp.connect()
     xmpp.process()
