@@ -13,5 +13,6 @@ pycares==3.0.0
 pycparser==2.19
 six==1.12.0
 slixmpp==1.4.2
+uuid==1.30
 wcwidth==0.1.7
 yarl==1.3.0
