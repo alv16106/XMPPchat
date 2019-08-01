@@ -12,21 +12,24 @@ options = {
   '/jr': 'Join Room - /jr [room]',
   '/lr': 'Leave Room - /lr [message](optional)',
   '/cpm': 'Change presence message - /cpm [new-message]',
-  '/sf': 'Send File - /sf [path-to-file]',
+  '/sf': 'Send File - /sf [path-to-file] [file_reciever]',
   '/rm': 'Remove account from server',
   '/h': 'Help'
 }
 
 
 def showOptions(args=''):
-  print(isFirst)
+  # Evaluate if its the fist showing of the menu or not
   j = term.location(0, int(term.height/2)) if isFirst else term.location()
   with j:
     print(term.center(term.blink('Commands')))
+    # Iterate over options
     for key, value in options.items():
       print(term.bold(term.center(key + ': ' +value)))
 
 def menu(functions):
+  """ Show menu for the first time and update isFirst flag so that the menu
+  knows further usages of showOptions are in a different term possition """
   showOptions()
   global isFirst
   isFirst = False

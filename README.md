@@ -29,12 +29,13 @@ The client can manage the commands listed below
   '/list': 'List users',
   '/add': 'Add user to contacts - /add [contact]',
   '/peek': 'See details for user /peek [contact]',
+  '/jc': 'Join Conversation /jc [contact]',
   '/jr': 'Join Room - /jr [room]',
   '/lr': 'Leave Room - /lr [message](optional)',
   '/cpm': 'Change presence message - /cpm [new-message]',
-  '/sf': 'Send File - /sf [path-to-file]',
+  '/sf': 'Send File - /sf [path-to-file] [file_reciever]',
   '/rm': 'Remove account from server',
-  '/h': 'Help, shows this menu again'
+  '/h': 'Help'
 }
 ```
 
